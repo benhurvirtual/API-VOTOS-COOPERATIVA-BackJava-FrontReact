@@ -1,0 +1,9 @@
+# Arquivos gerados pela IDE
+.idea/
+.vscode/
+
+# Dependências do Maven
+target/
+
+# Dependências do NPM/Yarn
+node_modules/
