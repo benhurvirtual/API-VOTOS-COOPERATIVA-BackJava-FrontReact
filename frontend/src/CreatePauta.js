@@ -1,15 +1,13 @@
-// src/CreatePauta.js
-
 import React, { useState } from 'react';
 
 const CreatePauta = () => {
     const [titulo, setTitulo] = useState('');
     const [descricao, setDescricao] = useState('');
+    const [errors, setErrors] = useState({});
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        // Atenção para a estrutura do objeto pauta aqui
         const pauta = {
             titulo: titulo,
             descricao: descricao
@@ -26,8 +24,18 @@ const CreatePauta = () => {
                 alert('Pauta criada com sucesso!');
                 setTitulo('');
                 setDescricao('');
+                setErrors({});
             } else {
-                alert('Erro ao criar pauta');
+                response.json().then(data => {
+                    const errorMessages = {};
+                    data.forEach(error => {
+                        if (!errorMessages[error.campo]) {
+                            errorMessages[error.campo] = [];
+                        }
+                        errorMessages[error.campo].push(error.mensagem);
+                    });
+                    setErrors(errorMessages);
+                });
             }
         });
     };
@@ -47,6 +55,14 @@ const CreatePauta = () => {
                 value={descricao}
                 onChange={(e) => setDescricao(e.target.value)}
             />
+            <div style={{ marginBottom: '10px' }}>
+                {errors.titulo && errors.titulo.map((error, index) => (
+                    <p key={`titulo-${index}`} style={{ color: 'red' }}>{error}</p>
+                ))}
+                {errors.descricao && errors.descricao.map((error, index) => (
+                    <p key={`descricao-${index}`} style={{ color: 'red' }}>{error}</p>
+                ))}
+            </div>
             <button type="submit">Criar</button>
         </form>
     );
