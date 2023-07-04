@@ -44,6 +44,3 @@ Backend: Java com o framework Spring Boot
 Frontend: React
 Interface de usuário
 Além da implementação da API, também foi desenvolvido um frontend em React para interagir com esta API, proporcionando uma interface de usuário amigável para manipulação e visualização das pautas e votações. Esse frontend permite que os usuários acessem as funcionalidades de maneira intuitiva e visual, ampliando a usabilidade da aplicação.
-
-Notas adicionais
-A escolha da linguagem de programação, frameworks e bibliotecas para a implementação do projeto foi livre, desde que não infrinjam direitos de uso. Neste caso, foi utilizada a linguagem Java com o framework Spring Boot para o backend e React para o frontend.
