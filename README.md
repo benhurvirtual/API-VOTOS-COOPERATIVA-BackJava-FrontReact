@@ -1,5 +1,5 @@
 API-VOTOS-COOPERATIVA
-O projeto API-VOTOS-COOPERATIVA foi desenvolvido com o objetivo de gerenciar sessões de votação no contexto do cooperativismo, onde cada associado possui um voto e as decisões são tomadas em assembleias. A solução foi desenvolvida utilizando a linguagem Java com o framework Spring Boot para o backend e React para o frontend.
+O projeto foi desenvolvido com o objetivo de gerenciar sessões de votação no contexto do cooperativismo, onde cada associado possui um voto e as decisões são tomadas em assembleias. A solução foi desenvolvida utilizando a linguagem Java com o framework Spring Boot para o backend e React para o frontend.
 
 Funcionalidades
 A API oferece uma série de funcionalidades através de uma API REST:
